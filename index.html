@@ -1,1 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Serenity — Mental Wellness</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
+  <!-- ── NAV ── -->
+  <nav class="nav">
+    <div class="nav-logo">✦ Serenity</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#quotes">Quotes</a>
+    </div>
+    <div class="nav-time" id="clockBadge">--:-- --</div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="home">
+    <div class="hero-left">
+      <div class="hero-tag">✦ Your Daily Wellness Companion</div>
+      <h1 class="hero-title">Your Mind<br><em>Deserves</em><br>Care Too.</h1>
+      <p class="hero-sub">Track your mood, focus your energy, and build healthier habits — one mindful day at a time.</p>
+      <div class="hero-btns">
+        <a href="#dashboard" class="btn-primary">Start Your Day</a>
+        <a href="#features" class="btn-ghost">Explore Features</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-blob">
+        <div class="blob-card mood-float">
+          <span class="blob-card-emoji">🌸</span>
+          <span class="blob-card-label">Feeling Good Today</span>
+        </div>
+        <div class="hero-circle">
+          <div class="hero-circle-inner">
+            <span class="hero-big-emoji">🧘</span>
+          </div>
+        </div>
+        <div class="blob-card focus-float">
+          <span class="blob-card-emoji">⏱</span>
+          <span class="blob-card-label">Focus Session Active</span>
+        </div>
+      </div>
+      <div class="sparkle s1">✦</div>
+      <div class="sparkle s2">✶</div>
+      <div class="sparkle s3">✦</div>
+    </div>
+  </section>
+
+  <!-- ── STATS BAND ── -->
+  <section class="stats-band">
+    <div class="stat-pill"><span class="stat-n">500+</span><span class="stat-l">Moods Logged</span></div>
+    <div class="stat-divider"></div>
+    <div class="stat-pill"><span class="stat-n">12</span><span class="stat-l">Calming Quotes</span></div>
+    <div class="stat-divider"></div>
+    <div class="stat-pill"><span class="stat-n">5</span><span class="stat-l">Wellness Metrics</span></div>
+    <div class="stat-divider"></div>
+    <div class="stat-pill"><span class="stat-n">∞</span><span class="stat-l">Focus Sessions</span></div>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section class="about" id="about">
+    <div class="about-image-wrap">
+      <div class="about-blob-bg"></div>
+      <div class="about-image-card">
+        <div class="about-icon-grid">
+          <div class="about-icon-cell lv"><i class="ti ti-mood-smile"></i></div>
+          <div class="about-icon-cell green"><i class="ti ti-clock"></i></div>
+          <div class="about-icon-cell pink"><i class="ti ti-heart"></i></div>
+          <div class="about-icon-cell warm"><i class="ti ti-leaf"></i></div>
+        </div>
+        <div class="about-center-text">
+          <div class="about-big">✦</div>
+          <div class="about-tagline">Mind · Body · Balance</div>
+        </div>
+      </div>
+      <div class="sparkle s4">✶</div>
+      <div class="sparkle s5">✦</div>
+    </div>
+    <div class="about-text">
+      <div class="section-tag">About Serenity</div>
+      <h2 class="section-title">Welcome to <em>Your</em><br>Wellness Space</h2>
+      <p class="section-body">Serenity is a personal mental wellness dashboard built to help you stay in tune with yourself. No accounts, no subscriptions — just a calm, private space to check in daily.</p>
+      <div class="about-stats">
+        <div class="about-stat"><span class="about-stat-n">5</span><span class="about-stat-l">Mood levels</span></div>
+        <div class="about-stat"><span class="about-stat-n">3</span><span class="about-stat-l">Wellness metrics</span></div>
+        <div class="about-stat"><span class="about-stat-n">1</span><span class="about-stat-l">Calm space</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FEATURES ── -->
+  <section class="features" id="features">
+    <div class="features-head">
+      <div class="section-tag">What We Offer</div>
+      <h2 class="section-title">We Can Help <em>Transform</em> You</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card fc-lv">
+        <div class="fc-icon"><i class="ti ti-mood-smile"></i></div>
+        <div class="fc-title">Mood Tracking</div>
+        <div class="fc-desc">Log how you feel throughout the day with timestamped entries and a visual history.</div>
+        <a href="#dashboard" class="fc-link">Explore →</a>
+      </div>
+      <div class="feature-card fc-pink featured">
+        <div class="fc-icon"><i class="ti ti-clock"></i></div>
+        <div class="fc-title">Focus Timer</div>
+        <div class="fc-desc">Pomodoro-style timer with session rings, break modes, and a live session counter.</div>
+        <a href="#dashboard" class="fc-link">Explore →</a>
+      </div>
+      <div class="feature-card fc-green">
+        <div class="fc-icon"><i class="ti ti-heart-rate-monitor"></i></div>
+        <div class="fc-title">Wellness Insights</div>
+        <div class="fc-desc">Track hydration, sleep, and movement with live progress bars and smart tips.</div>
+        <a href="#dashboard" class="fc-link">Explore →</a>
+      </div>
+      <div class="feature-card fc-warm">
+        <div class="fc-icon"><i class="ti ti-checkbox"></i></div>
+        <div class="fc-title">Productivity Balance</div>
+        <div class="fc-desc">Add tasks, track completion, and watch your weekly heatmap fill up with progress.</div>
+        <a href="#dashboard" class="fc-link">Explore →</a>
+      </div>
+    </div>
+    <div class="sparkle s6">✦</div>
+    <div class="sparkle s7">✶</div>
+  </section>
+
+  <!-- ── QUOTE SECTION ── -->
+  <section class="quote-section" id="quotes">
+    <div class="quote-section-inner">
+      <div class="section-tag center">Daily Calm</div>
+      <h2 class="section-title center">A Moment of <em>Peace</em></h2>
+      <div class="big-quote-box">
+        <div class="big-quote-mark">"</div>
+        <div class="big-quote-text" id="quoteText">You don't have to control your thoughts. You just have to stop letting them control you.</div>
+        <div class="big-quote-author" id="quoteAuthor">— Dan Millman</div>
+      </div>
+      <button class="btn-primary" onclick="newQuote()">✦ New Quote</button>
+    </div>
+    <div class="sparkle s8">✦</div>
+  </section>
+
+  <!-- ── DASHBOARD ── -->
+  <section class="dashboard-section" id="dashboard">
+    <div class="section-tag center">Your Space</div>
+    <h2 class="section-title center">Your Daily <em>Dashboard</em></h2>
+
+    <!-- Mini stats -->
+    <div class="dash-stat-row">
+      <div class="dash-stat">
+        <div class="dash-stat-val" id="stat-mood">—</div>
+        <div class="dash-stat-label">Today's Mood</div>
+      </div>
+      <div class="dash-stat">
+        <div class="dash-stat-val" id="stat-focus">0</div>
+        <div class="dash-stat-label">Focus Sessions</div>
+      </div>
+      <div class="dash-stat">
+        <div class="dash-stat-val" id="stat-tasks">0/0</div>
+        <div class="dash-stat-label">Tasks Done</div>
+      </div>
+      <div class="dash-stat">
+        <div class="dash-stat-val" id="stat-streak">0🔥</div>
+        <div class="dash-stat-label">Day Streak</div>
+      </div>
+    </div>
+
+    <div class="dash-grid">
+
+      <!-- Mood tracker -->
+      <div class="dash-card">
+        <div class="dash-card-title"><i class="ti ti-mood-smile"></i>Mood Tracker</div>
+        <div class="mood-row">
+          <button class="mood-btn" onclick="logMood('😔','Low',this)">
+            <span class="mood-emoji">😔</span>Low
+          </button>
+          <button class="mood-btn" onclick="logMood('😐','Okay',this)">
+            <span class="mood-emoji">😐</span>Okay
+          </button>
+          <button class="mood-btn" onclick="logMood('🙂','Good',this)">
+            <span class="mood-emoji">🙂</span>Good
+          </button>
+          <button class="mood-btn" onclick="logMood('😊','Great',this)">
+            <span class="mood-emoji">😊</span>Great
+          </button>
+          <button class="mood-btn" onclick="logMood('🤩','Amazing',this)">
+            <span class="mood-emoji">🤩</span>Amazing
+          </button>
+        </div>
+        <div class="mood-history" id="moodHistory">
+          <span class="mood-empty">No entries yet — tap a mood above</span>
+        </div>
+      </div>
+
+      <!-- Focus timer -->
+      <div class="dash-card">
+        <div class="dash-card-title"><i class="ti ti-clock"></i>Focus Timer</div>
+        <div class="focus-display">
+          <div class="focus-time" id="focusTime">25:00</div>
+          <div class="focus-label" id="focusLabel">Pomodoro · Ready</div>
+        </div>
+        <div class="focus-btns">
+          <button class="f-btn" onclick="setMode('short')">Break 5m</button>
+          <button class="f-btn primary" id="focusStartBtn" onclick="toggleFocus()">Start</button>
+          <button class="f-btn" onclick="setMode('long')">Focus 25m</button>
+        </div>
+        <div class="focus-rings" id="focusRings">
+          <div class="ring"></div>
+          <div class="ring"></div>
+          <div class="ring"></div>
+          <div class="ring"></div>
+        </div>
+        <div class="session-count" id="sessionCount">Sessions completed: 0</div>
+      </div>
+
+      <!-- Wellness insights -->
+      <div class="dash-card">
+        <div class="dash-card-title"><i class="ti ti-heart-rate-monitor"></i>Wellness Insights</div>
+        <div class="insight-row">
+          <div class="ins-icon green-bg"><i class="ti ti-droplet" style="color:#5BAF7A"></i></div>
+          <div class="ins-info">
+            <div class="ins-label">Hydration</div>
+            <div class="ins-sub" id="hydration-sub">0 of 8 glasses</div>
+          </div>
+          <div class="ins-bar-wrap">
+            <div class="ins-bar-track"><div class="ins-bar-fill" id="hydration-bar" style="width:0%;background:#5BAF7A"></div></div>
+            <div class="ins-val" id="hydration-val">0%</div>
+          </div>
+        </div>
+        <div class="insight-row">
+          <div class="ins-icon lv-bg"><i class="ti ti-moon" style="color:#9B78C9"></i></div>
+          <div class="ins-info">
+            <div class="ins-label">Sleep</div>
+            <div class="ins-sub" id="sleep-sub">Log hours below</div>
+          </div>
+          <div class="ins-bar-wrap">
+            <div class="ins-bar-track"><div class="ins-bar-fill" id="sleep-bar" style="width:0%;background:#9B78C9"></div></div>
+            <div class="ins-val" id="sleep-val">0h</div>
+          </div>
+        </div>
+        <div class="insight-row last">
+          <div class="ins-icon pink-bg"><i class="ti ti-run" style="color:#C97878"></i></div>
+          <div class="ins-info">
+            <div class="ins-label">Movement</div>
+            <div class="ins-sub" id="move-sub">0 min today</div>
+          </div>
+          <div class="ins-bar-wrap">
+            <div class="ins-bar-track"><div class="ins-bar-fill" id="move-bar" style="width:0%;background:#C97878"></div></div>
+            <div class="ins-val" id="move-val">0%</div>
+          </div>
+        </div>
+        <div class="wellness-inputs">
+          <div class="w-inp-group">
+            <div class="w-inp-label">Water (glasses)</div>
+            <input class="w-input" type="number" min="0" max="8" placeholder="0–8"
+              oninput="updateWellness('hydration', this.value)">
+          </div>
+          <div class="w-inp-group">
+            <div class="w-inp-label">Sleep (hours)</div>
+            <input class="w-input" type="number" min="0" max="12" placeholder="0–12"
+              oninput="updateWellness('sleep', this.value)">
+          </div>
+          <div class="w-inp-group">
+            <div class="w-inp-label">Movement (min)</div>
+            <input class="w-input" type="number" min="0" max="120" placeholder="0–120"
+              oninput="updateWellness('move', this.value)">
+          </div>
+        </div>
+      </div>
+
+      <!-- Productivity -->
+      <div class="dash-card">
+        <div class="dash-card-title"><i class="ti ti-checkbox"></i>Productivity Balance</div>
+        <div class="prod-grid" id="prodGrid"></div>
+        <div class="prod-legend">
+          <span class="prod-leg"><span class="prod-leg-sq none"></span>None</span>
+          <span class="prod-leg"><span class="prod-leg-sq low"></span>Low</span>
+          <span class="prod-leg"><span class="prod-leg-sq mid"></span>Mid</span>
+          <span class="prod-leg"><span class="prod-leg-sq high"></span>High</span>
+        </div>
+        <div class="prod-task-row">
+          <input class="prod-input" id="taskInput" placeholder="Add a task..."
+            onkeydown="if(event.key==='Enter') addTask()">
+          <button class="prod-add-btn" onclick="addTask()">+</button>
+        </div>
+        <div class="task-list" id="taskList"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer-logo">✦ Serenity</div>
+    <div class="footer-sub">A personal mental wellness dashboard · Built with care</div>
+    <div class="footer-links">
+      <a href="https://github.com/SAMYUKTHASRR" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/samyuktha-sanil-b5b285291" target="_blank">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
