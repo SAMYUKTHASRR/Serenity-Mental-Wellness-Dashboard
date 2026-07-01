@@ -4,40 +4,50 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Serenity — Mental Wellness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <!-- ── AMBIENT PETAL CANVAS (fixed, behind everything) ── -->
+  <canvas id="petalCanvas"></canvas>
+  <div class="grain"></div>
+
   <!-- ── NAV ── -->
-  <nav class="nav">
-    <div class="nav-logo">✦ Serenity</div>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#features">Features</a>
-      <a href="#dashboard">Dashboard</a>
-      <a href="#quotes">Quotes</a>
+  <nav class="nav" id="siteNav">
+    <div class="nav-logo"><span class="nav-mark">✦</span> Serenity</div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <div class="nav-links" id="navLinks">
+      <a href="#about" data-nav>About</a>
+      <a href="#features" data-nav>Features</a>
+      <a href="#dashboard" data-nav>Dashboard</a>
+      <a href="#quotes" data-nav>Quotes</a>
     </div>
     <div class="nav-time" id="clockBadge">--:-- --</div>
   </nav>
 
   <!-- ── HERO ── -->
   <section class="hero" id="home">
-    <div class="hero-left">
-      <div class="hero-tag">✦ Your Daily Wellness Companion</div>
+    <div class="hero-glow" id="heroGlow"></div>
+    <div class="hero-left" data-reveal>
+      <div class="hero-tag"><span class="dot-pulse"></span> Your Daily Wellness Companion</div>
       <h1 class="hero-title">Your Mind<br><em>Deserves</em><br>Care Too.</h1>
       <p class="hero-sub">Track your mood, focus your energy, and build healthier habits — one mindful day at a time.</p>
       <div class="hero-btns">
-        <a href="#dashboard" class="btn-primary">Start Your Day</a>
+        <a href="#dashboard" class="btn-primary"><span>Start Your Day</span></a>
         <a href="#features" class="btn-ghost">Explore Features</a>
       </div>
     </div>
-    <div class="hero-right">
-      <div class="hero-blob">
+    <div class="hero-right" data-reveal data-reveal-delay="1">
+      <div class="hero-blob" id="heroBlob">
         <div class="blob-card mood-float">
           <span class="blob-card-emoji">🌸</span>
           <span class="blob-card-label">Feeling Good Today</span>
         </div>
+        <div class="hero-ring-orbit"><div class="orbit-dot"></div></div>
         <div class="hero-circle">
           <div class="hero-circle-inner">
             <span class="hero-big-emoji">🧘</span>
@@ -55,19 +65,19 @@
   </section>
 
   <!-- ── STATS BAND ── -->
-  <section class="stats-band">
-    <div class="stat-pill"><span class="stat-n">500+</span><span class="stat-l">Moods Logged</span></div>
+  <section class="stats-band" data-reveal>
+    <div class="stat-pill"><span class="stat-n" data-count="500" data-suffix="+">0</span><span class="stat-l">Moods Logged</span></div>
     <div class="stat-divider"></div>
-    <div class="stat-pill"><span class="stat-n">12</span><span class="stat-l">Calming Quotes</span></div>
+    <div class="stat-pill"><span class="stat-n" data-count="12">0</span><span class="stat-l">Calming Quotes</span></div>
     <div class="stat-divider"></div>
-    <div class="stat-pill"><span class="stat-n">5</span><span class="stat-l">Wellness Metrics</span></div>
+    <div class="stat-pill"><span class="stat-n" data-count="5">0</span><span class="stat-l">Wellness Metrics</span></div>
     <div class="stat-divider"></div>
     <div class="stat-pill"><span class="stat-n">∞</span><span class="stat-l">Focus Sessions</span></div>
   </section>
 
   <!-- ── ABOUT ── -->
   <section class="about" id="about">
-    <div class="about-image-wrap">
+    <div class="about-image-wrap" data-reveal data-reveal-dir="left">
       <div class="about-blob-bg"></div>
       <div class="about-image-card">
         <div class="about-icon-grid">
@@ -84,7 +94,7 @@
       <div class="sparkle s4">✶</div>
       <div class="sparkle s5">✦</div>
     </div>
-    <div class="about-text">
+    <div class="about-text" data-reveal data-reveal-dir="right">
       <div class="section-tag">About Serenity</div>
       <h2 class="section-title">Welcome to <em>Your</em><br>Wellness Space</h2>
       <p class="section-body">Serenity is a personal mental wellness dashboard built to help you stay in tune with yourself. No accounts, no subscriptions — just a calm, private space to check in daily.</p>
@@ -98,34 +108,34 @@
 
   <!-- ── FEATURES ── -->
   <section class="features" id="features">
-    <div class="features-head">
+    <div class="features-head" data-reveal>
       <div class="section-tag">What We Offer</div>
       <h2 class="section-title">We Can Help <em>Transform</em> You</h2>
     </div>
     <div class="features-grid">
-      <div class="feature-card fc-lv">
+      <div class="feature-card fc-lv" data-reveal data-reveal-delay="0">
         <div class="fc-icon"><i class="ti ti-mood-smile"></i></div>
         <div class="fc-title">Mood Tracking</div>
         <div class="fc-desc">Log how you feel throughout the day with timestamped entries and a visual history.</div>
-        <a href="#dashboard" class="fc-link">Explore →</a>
+        <a href="#dashboard" class="fc-link">Explore <span class="fc-arrow">→</span></a>
       </div>
-      <div class="feature-card fc-pink featured">
+      <div class="feature-card fc-pink featured" data-reveal data-reveal-delay="1">
         <div class="fc-icon"><i class="ti ti-clock"></i></div>
         <div class="fc-title">Focus Timer</div>
         <div class="fc-desc">Pomodoro-style timer with session rings, break modes, and a live session counter.</div>
-        <a href="#dashboard" class="fc-link">Explore →</a>
+        <a href="#dashboard" class="fc-link">Explore <span class="fc-arrow">→</span></a>
       </div>
-      <div class="feature-card fc-green">
+      <div class="feature-card fc-green" data-reveal data-reveal-delay="2">
         <div class="fc-icon"><i class="ti ti-heart-rate-monitor"></i></div>
         <div class="fc-title">Wellness Insights</div>
         <div class="fc-desc">Track hydration, sleep, and movement with live progress bars and smart tips.</div>
-        <a href="#dashboard" class="fc-link">Explore →</a>
+        <a href="#dashboard" class="fc-link">Explore <span class="fc-arrow">→</span></a>
       </div>
-      <div class="feature-card fc-warm">
+      <div class="feature-card fc-warm" data-reveal data-reveal-delay="3">
         <div class="fc-icon"><i class="ti ti-checkbox"></i></div>
         <div class="fc-title">Productivity Balance</div>
         <div class="fc-desc">Add tasks, track completion, and watch your weekly heatmap fill up with progress.</div>
-        <a href="#dashboard" class="fc-link">Explore →</a>
+        <a href="#dashboard" class="fc-link">Explore <span class="fc-arrow">→</span></a>
       </div>
     </div>
     <div class="sparkle s6">✦</div>
@@ -134,7 +144,7 @@
 
   <!-- ── QUOTE SECTION ── -->
   <section class="quote-section" id="quotes">
-    <div class="quote-section-inner">
+    <div class="quote-section-inner" data-reveal>
       <div class="section-tag center">Daily Calm</div>
       <h2 class="section-title center">A Moment of <em>Peace</em></h2>
       <div class="big-quote-box">
@@ -142,18 +152,18 @@
         <div class="big-quote-text" id="quoteText">You don't have to control your thoughts. You just have to stop letting them control you.</div>
         <div class="big-quote-author" id="quoteAuthor">— Dan Millman</div>
       </div>
-      <button class="btn-primary" onclick="newQuote()">✦ New Quote</button>
+      <button class="btn-primary" onclick="newQuote()"><span>✦ New Quote</span></button>
     </div>
     <div class="sparkle s8">✦</div>
   </section>
 
   <!-- ── DASHBOARD ── -->
   <section class="dashboard-section" id="dashboard">
-    <div class="section-tag center">Your Space</div>
-    <h2 class="section-title center">Your Daily <em>Dashboard</em></h2>
+    <div class="section-tag center" data-reveal>Your Space</div>
+    <h2 class="section-title center" data-reveal>Your Daily <em>Dashboard</em></h2>
 
     <!-- Mini stats -->
-    <div class="dash-stat-row">
+    <div class="dash-stat-row" data-reveal>
       <div class="dash-stat">
         <div class="dash-stat-val" id="stat-mood">—</div>
         <div class="dash-stat-label">Today's Mood</div>
@@ -175,7 +185,7 @@
     <div class="dash-grid">
 
       <!-- Mood tracker -->
-      <div class="dash-card">
+      <div class="dash-card" data-reveal data-reveal-delay="0">
         <div class="dash-card-title"><i class="ti ti-mood-smile"></i>Mood Tracker</div>
         <div class="mood-row">
           <button class="mood-btn" onclick="logMood('😔','Low',this)">
@@ -200,11 +210,19 @@
       </div>
 
       <!-- Focus timer -->
-      <div class="dash-card">
+      <div class="dash-card" data-reveal data-reveal-delay="1">
         <div class="dash-card-title"><i class="ti ti-clock"></i>Focus Timer</div>
         <div class="focus-display">
-          <div class="focus-time" id="focusTime">25:00</div>
-          <div class="focus-label" id="focusLabel">Pomodoro · Ready</div>
+          <div class="focus-ring-wrap">
+            <svg class="focus-svg" viewBox="0 0 160 160">
+              <circle class="focus-track" cx="80" cy="80" r="70"></circle>
+              <circle class="focus-progress" id="focusProgress" cx="80" cy="80" r="70"></circle>
+            </svg>
+            <div class="focus-ring-center">
+              <div class="focus-time" id="focusTime">25:00</div>
+              <div class="focus-label" id="focusLabel">Pomodoro · Ready</div>
+            </div>
+          </div>
         </div>
         <div class="focus-btns">
           <button class="f-btn" onclick="setMode('short')">Break 5m</button>
@@ -221,38 +239,38 @@
       </div>
 
       <!-- Wellness insights -->
-      <div class="dash-card">
+      <div class="dash-card" data-reveal data-reveal-delay="2">
         <div class="dash-card-title"><i class="ti ti-heart-rate-monitor"></i>Wellness Insights</div>
         <div class="insight-row">
-          <div class="ins-icon green-bg"><i class="ti ti-droplet" style="color:#5BAF7A"></i></div>
+          <div class="ins-icon green-bg"><i class="ti ti-droplet"></i></div>
           <div class="ins-info">
             <div class="ins-label">Hydration</div>
             <div class="ins-sub" id="hydration-sub">0 of 8 glasses</div>
           </div>
           <div class="ins-bar-wrap">
-            <div class="ins-bar-track"><div class="ins-bar-fill" id="hydration-bar" style="width:0%;background:#5BAF7A"></div></div>
+            <div class="ins-bar-track"><div class="ins-bar-fill hydration" id="hydration-bar" style="width:0%"></div></div>
             <div class="ins-val" id="hydration-val">0%</div>
           </div>
         </div>
         <div class="insight-row">
-          <div class="ins-icon lv-bg"><i class="ti ti-moon" style="color:#9B78C9"></i></div>
+          <div class="ins-icon lv-bg"><i class="ti ti-moon"></i></div>
           <div class="ins-info">
             <div class="ins-label">Sleep</div>
             <div class="ins-sub" id="sleep-sub">Log hours below</div>
           </div>
           <div class="ins-bar-wrap">
-            <div class="ins-bar-track"><div class="ins-bar-fill" id="sleep-bar" style="width:0%;background:#9B78C9"></div></div>
+            <div class="ins-bar-track"><div class="ins-bar-fill sleep" id="sleep-bar" style="width:0%"></div></div>
             <div class="ins-val" id="sleep-val">0h</div>
           </div>
         </div>
         <div class="insight-row last">
-          <div class="ins-icon pink-bg"><i class="ti ti-run" style="color:#C97878"></i></div>
+          <div class="ins-icon pink-bg"><i class="ti ti-run"></i></div>
           <div class="ins-info">
             <div class="ins-label">Movement</div>
             <div class="ins-sub" id="move-sub">0 min today</div>
           </div>
           <div class="ins-bar-wrap">
-            <div class="ins-bar-track"><div class="ins-bar-fill" id="move-bar" style="width:0%;background:#C97878"></div></div>
+            <div class="ins-bar-track"><div class="ins-bar-fill move" id="move-bar" style="width:0%"></div></div>
             <div class="ins-val" id="move-val">0%</div>
           </div>
         </div>
@@ -276,7 +294,7 @@
       </div>
 
       <!-- Productivity -->
-      <div class="dash-card">
+      <div class="dash-card" data-reveal data-reveal-delay="3">
         <div class="dash-card-title"><i class="ti ti-checkbox"></i>Productivity Balance</div>
         <div class="prod-grid" id="prodGrid"></div>
         <div class="prod-legend">
@@ -296,6 +314,9 @@
     </div>
   </section>
 
+  <!-- ── TOAST ── -->
+  <div class="toast" id="toast"></div>
+
   <!-- ── FOOTER ── -->
   <footer class="footer">
     <div class="footer-logo">✦ Serenity</div>
@@ -305,6 +326,8 @@
       <a href="https://linkedin.com/in/samyuktha-sanil-b5b285291" target="_blank">LinkedIn</a>
     </div>
   </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Back to top">↑</button>
 
   <script src="script.js"></script>
 </body>
