@@ -1,92 +1,153 @@
-# Serenity — Mental Wellness Dashboard
+<div align="center">
 
-> An editorial-style mental wellness web app with mood tracking, focus timer, wellness insights, calming quotes, and productivity balance — built with a warm cream + rose pink aesthetic.
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:171B26,50:343C4F,100:EEACA9&height=200&section=header&text=Serenity&fontSize=60&fontColor=F5F2F0&fontAlignY=38&desc=A%20Personal%20Mental%20Wellness%20Dashboard&descAlignY=58&descSize=18&descColor=DBCDC9&animation=fadeIn" width="100%"/>
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![No Frameworks](https://img.shields.io/badge/No_Frameworks-Zero_Dependencies-E8A0A0?style=flat-square)
+<img src="https://readme-typing-svg.demolab.com/?font=Fraunces&weight=500&size=22&duration=3000&pause=1200&color=EEACA9&background=00000000&center=true&vCenter=true&width=560&lines=Your+Mind+Deserves+Care+Too.;Track+Mood+%C2%B7+Focus+%C2%B7+Breathe.;No+accounts.+No+noise.+Just+you." alt="Typing SVG" />
 
----
+<br>
 
-## Preview
+![HTML5](https://img.shields.io/badge/HTML5-EEACA9?style=for-the-badge&logo=html5&logoColor=171B26&labelColor=343C4F)
+![CSS3](https://img.shields.io/badge/CSS3-DBCDC9?style=for-the-badge&logo=css3&logoColor=171B26&labelColor=343C4F)
+![JavaScript](https://img.shields.io/badge/JavaScript-F5F2F0?style=for-the-badge&logo=javascript&logoColor=171B26&labelColor=343C4F)
+![Status](https://img.shields.io/badge/Status-Active-EEACA9?style=for-the-badge&labelColor=343C4F)
+![License](https://img.shields.io/badge/License-MIT-DBCDC9?style=for-the-badge&labelColor=343C4F)
 
-<!-- After opening index.html in browser → screenshot → save as preview.png → upload here -->
+</div>
 
-![Serenity Dashboard Preview](preview.png)
-
----
-
-## Features
-
-- **Hero landing section** — animated morphing blob, floating cards, editorial typography
-- **Mood tracker** — 5 mood levels with timestamped log and history chips
-- **Focus timer** — Pomodoro with 25min / 5min modes, pause/resume, animated session rings
-- **Calming quotes** — 12 curated wellness quotes that rotate on demand
-- **Wellness insights** — live progress bars for hydration, sleep, and movement
-- **Productivity balance** — weekly heatmap + task list with completion tracking
-- **Live stat cards** — mood, sessions, tasks done, and streak update in real time
-- **Responsive** — adapts cleanly to mobile and tablet
-- **Warm cream + rose pink UI** — editorial magazine-style design, zero CSS frameworks
+<br>
 
 ---
 
-## Getting started
+## 🌙 Section 1 — Overview
 
-No build tools or installation needed — just open in any browser.
+### Serenity — Mental Wellness Dashboard
+
+> *"You don't have to control your thoughts. You just have to stop letting them control you."*
+
+### 📖 Description &nbsp;·&nbsp; Why This Exists
+
+Serenity is a personal, offline-first mental wellness dashboard — a calm corner of the internet with no logins, no subscriptions, and no data leaving your browser. It was built out of a simple frustration: most wellness apps are either overloaded with features or locked behind a paywall for basics like mood tracking and a Pomodoro timer.
+
+Serenity strips that down to what actually matters day-to-day — logging how you feel, focusing for a session, checking in on hydration/sleep/movement, and closing loops on small tasks — wrapped in a moody, floral-dark aesthetic that feels more like a quiet ritual than another dashboard.
+
+### 🧵 Experience &nbsp;·&nbsp; The Build Journey
+
+This project went through a full visual identity shift — from an early bright/pastel layout to a deliberate **"Dried Bloom" dark theme** (ink navy, dusty rose, warm taupe, soft cream) designed around a moodboard rather than default UI-kit colors. Along the way it evolved from a single-file build into a proper multi-page structure, and picked up its animation layer — scroll reveals, an SVG focus-ring timer, ambient floating particles, and micro-interactions on every card and button — on top of the original vanilla logic.
+
+### ✅ Requisites
+
+No installs, no build step, no dependencies to manage:
+
+- A modern browser (Chrome, Edge, Firefox, Safari — anything from the last few years)
+- Internet connection on first load (for Google Fonts + Tabler Icons via CDN)
+- That's it — everything else runs client-side in plain HTML/CSS/JS
+
+<br>
+
+---
+
+## 🗂️ Section 2 — Project Details
+
+### 🎯 Project Context
+
+Serenity is a solo front-end project focused on **mood tracking, focus management, and daily wellness check-ins**, built as a portfolio piece to demonstrate interaction design, animation, and clean vanilla JS state handling without relying on a framework.
+
+### ⚙️ Installation
 
 ```bash
-# Clone the repo
+# 1. Clone the repository
 git clone https://github.com/SAMYUKTHASRR/Serenity-Mental-Wellness-Dashboard.git
 
-# Open in browser
+# 2. Move into the project folder
+cd Serenity-Mental-Wellness-Dashboard
+
+# 3. Open it — no build tools required
 open index.html
+# or just double-click index.html / drag it into your browser
 ```
 
-Or [download the ZIP](https://github.com/SAMYUKTHASRR/Serenity-Mental-Wellness-Dashboard/archive/refs/heads/main.zip) and open `index.html` directly.
+Prefer a local dev server (recommended for the multi-page version so relative links behave):
 
----
-
-## Project structure
-
-```
-Serenity-Mental-Wellness-Dashboard/
-├── index.html    # Structure and layout
-├── style.css     # All styling — theme, sections, components
-├── script.js     # All interactivity — clock, mood, timer, quotes, wellness, tasks
-├── README.md
-└── preview.png   # Screenshot (add after first run)
+```bash
+# using VS Code Live Server extension, or:
+npx serve .
 ```
 
----
+### 🛠️ Tech Stack
 
-## Sections
+| Layer        | Tools |
+|--------------|-------|
+| Markup       | HTML5 (semantic sections) |
+| Styling      | CSS3 — custom properties, `IntersectionObserver`-driven reveals, SVG-based progress rings |
+| Behavior     | Vanilla JavaScript (ES6+), no frameworks |
+| Typography   | [Fraunces](https://fonts.google.com/specimen/Fraunces) (display) + [Manrope](https://fonts.google.com/specimen/Manrope) (body) via Google Fonts |
+| Icons        | [Tabler Icons](https://tabler.io/icons) |
+| Hosting      | GitHub Pages |
 
-| Section | Description |
-|---|---|
-| Hero | Editorial landing with animated blob, floating feature cards, sparkle accents |
-| Stats band | Four headline numbers — moods, quotes, metrics, sessions |
-| About | Icon grid card, organic blob background, stat counters |
-| Features | 4-card grid with one featured (highlighted) card |
-| Quote | Full-width calming quote with rotate button |
-| Dashboard | Live mood tracker, focus timer, wellness bars, task heatmap |
-| Footer | Logo, tagline, GitHub + LinkedIn links |
+### 🙏 Credits &nbsp;/&nbsp; Acknowledgment
 
----
+- Quotes curated from various mindfulness and self-help sources — full credit to their original authors (attributed inline in the app).
+- Color palette inspired by a dark floral moodboard (dusty rose, ink navy, warm taupe, soft cream).
+- Icons by [Tabler Icons](https://tabler.io/icons); fonts by [Google Fonts](https://fonts.google.com).
+- Built and designed by **[Samyuktha Sanil](https://github.com/SAMYUKTHASRR)**.
 
-## Built with
-
-- Pure HTML5, CSS3, JavaScript — no libraries, no frameworks
-- [Tabler Icons](https://tabler.io/icons) via CDN
-- CSS custom properties for consistent theming
-- CSS animations for blob morph, floating cards, sparkles, and ring pulse
+<br>
 
 ---
 
-## Design highlights
+## 📌 Section 3 — Reference
 
-The UI takes inspiration from editorial magazine layouts — large serif-style headings, organic blob shapes, warm neutral tones, and decorative sparkle accents. Every interactive element (mood buttons, timer rings, heatmap dots, task checkboxes) uses smooth CSS transitions for a polished, app-like feel.
+### 📑 Table of Contents
 
----
+- [Overview](#-section-1--overview)
+  - [Description](#-description--why-this-exists)
+  - [Experience](#-experience--the-build-journey)
+  - [Requisites](#-requisites)
+- [Project Details](#️-section-2--project-details)
+  - [Project Context](#-project-context)
+  - [Installation](#️-installation)
+  - [Tech Stack](#️-tech-stack)
+  - [Credits](#-credits--acknowledgment)
+- [Reference](#-section-3--reference)
+  - [Visuals](#️-visuals)
+  - [Running Tests](#-running-tests)
+  - [Project Status](#-project-status)
 
-*Made by [Samyuktha Sanil](https://github.com/SAMYUKTHASRR)*
+### 🖼️ Visuals
+
+<div align="center">
+
+| Home | About |
+|:---:|:---:|
+| ![Home preview](preview.png) | ![About page](about.png) |
+
+| Features | Dashboard |
+|:---:|:---:|
+| ![Features page](feature.png) | ![Dashboard page](dashboard.png) |
+
+</div>
+
+> Drop `about.png`, `feature.png`, and `dashboard.png` into the repo root (or an `/assets` folder — just update the paths above to match, e.g. `assets/about.png`) alongside the existing `preview.png`.
+
+### 🧪 Running Tests
+
+Serenity is a static front-end project with no test suite or backend — verification is manual:
+
+1. Open each page (`index.html`, `about.html`, `features.html`, `dashboard.html`, `quotes.html`) and confirm nav links route correctly.
+2. On **Dashboard**: log a mood, start/pause the focus timer, add and complete a task, and enter hydration/sleep/movement values — confirm the UI updates live.
+3. On **Quotes**: click "New Quote" a few times to confirm no immediate repeats.
+4. Resize to mobile width and confirm the hamburger nav opens/closes correctly.
+
+> If you'd like automated coverage later, this project is a good candidate for [Playwright](https://playwright.dev/) UI smoke tests, since all interactions are DOM-based with no backend to mock.
+
+### 🚦 Project Status
+
+![Status](https://img.shields.io/badge/Status-Actively%20Maintained-EEACA9?style=for-the-badge&labelColor=343C4F)
+
+Actively maintained — currently in the middle of a visual + structural redesign (multi-page split, new "Dried Bloom" theme, animation layer). Next up: persisting state with `localStorage`, and a possible React rebuild.
+
+<br>
+
+<div align="center">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:EEACA9,50:343C4F,100:171B26&height=100&section=footer" width="100%"/>
+</div>
