@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Features — Serenity</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <canvas id="petalCanvas"></canvas>
+  <div class="grain"></div>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" id="siteNav">
+    <a href="index.html" class="nav-logo"><span class="nav-mark">✦</span> Serenity</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" data-nav>Home</a>
+      <a href="about.html" data-nav>About</a>
+      <a href="features.html" data-nav>Features</a>
+      <a href="dashboard.html" data-nav>Dashboard</a>
+      <a href="quotes.html" data-nav>Quotes</a>
+    </div>
+    <div class="nav-time" id="clockBadge">--:-- --</div>
+  </nav>
+
+  <!-- ── FEATURES ── -->
+  <section class="features" style="border-top:none;">
+    <div class="features-head" data-reveal>
+      <div class="section-tag">What We Offer</div>
+      <h2 class="section-title">We Can Help <em>Transform</em> You</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card fc-lv" data-reveal data-reveal-delay="0">
+        <div class="fc-icon"><i class="ti ti-mood-smile"></i></div>
+        <div class="fc-title">Mood Tracking</div>
+        <div class="fc-desc">Log how you feel throughout the day with timestamped entries and a visual history.</div>
+        <a href="dashboard.html" class="fc-link">Explore <span class="fc-arrow">→</span></a>
+      </div>
+      <div class="feature-card fc-pink featured" data-reveal data-reveal-delay="1">
+        <div class="fc-icon"><i class="ti ti-clock"></i></div>
+        <div class="fc-title">Focus Timer</div>
+        <div class="fc-desc">Pomodoro-style timer with session rings, break modes, and a live session counter.</div>
+        <a href="dashboard.html" class="fc-link">Explore <span class="fc-arrow">→</span></a>
+      </div>
+      <div class="feature-card fc-green" data-reveal data-reveal-delay="2">
+        <div class="fc-icon"><i class="ti ti-heart-rate-monitor"></i></div>
+        <div class="fc-title">Wellness Insights</div>
+        <div class="fc-desc">Track hydration, sleep, and movement with live progress bars and smart tips.</div>
+        <a href="dashboard.html" class="fc-link">Explore <span class="fc-arrow">→</span></a>
+      </div>
+      <div class="feature-card fc-warm" data-reveal data-reveal-delay="3">
+        <div class="fc-icon"><i class="ti ti-checkbox"></i></div>
+        <div class="fc-title">Productivity Balance</div>
+        <div class="fc-desc">Add tasks, track completion, and watch your weekly heatmap fill up with progress.</div>
+        <a href="dashboard.html" class="fc-link">Explore <span class="fc-arrow">→</span></a>
+      </div>
+    </div>
+    <div class="sparkle s6">✦</div>
+    <div class="sparkle s7">✶</div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer-logo">✦ Serenity</div>
+    <div class="footer-sub">A personal mental wellness dashboard · Built with care</div>
+    <div class="footer-links">
+      <a href="https://github.com/SAMYUKTHASRR" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/samyuktha-sanil-b5b285291" target="_blank">LinkedIn</a>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quotes — Serenity</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <canvas id="petalCanvas"></canvas>
+  <div class="grain"></div>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" id="siteNav">
+    <a href="index.html" class="nav-logo"><span class="nav-mark">✦</span> Serenity</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" data-nav>Home</a>
+      <a href="about.html" data-nav>About</a>
+      <a href="features.html" data-nav>Features</a>
+      <a href="dashboard.html" data-nav>Dashboard</a>
+      <a href="quotes.html" data-nav>Quotes</a>
+    </div>
+    <div class="nav-time" id="clockBadge">--:-- --</div>
+  </nav>
+
+  <!-- ── QUOTE SECTION ── -->
+  <section class="quote-section" style="min-height:70vh;align-items:center;">
+    <div class="quote-section-inner" data-reveal>
+      <div class="section-tag center">Daily Calm</div>
+      <h2 class="section-title center">A Moment of <em>Peace</em></h2>
+      <div class="big-quote-box">
+        <div class="big-quote-mark">"</div>
+        <div class="big-quote-text" id="quoteText">You don't have to control your thoughts. You just have to stop letting them control you.</div>
+        <div class="big-quote-author" id="quoteAuthor">— Dan Millman</div>
+      </div>
+      <button class="btn-primary" onclick="newQuote()"><span>✦ New Quote</span></button>
+    </div>
+    <div class="sparkle s8">✦</div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer-logo">✦ Serenity</div>
+    <div class="footer-sub">A personal mental wellness dashboard · Built with care</div>
+    <div class="footer-links">
+      <a href="https://github.com/SAMYUKTHASRR" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/samyuktha-sanil-b5b285291" target="_blank">LinkedIn</a>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

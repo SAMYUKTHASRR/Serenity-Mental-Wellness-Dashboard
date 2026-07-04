@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Serenity</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <canvas id="petalCanvas"></canvas>
+  <div class="grain"></div>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" id="siteNav">
+    <a href="index.html" class="nav-logo"><span class="nav-mark">✦</span> Serenity</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" data-nav>Home</a>
+      <a href="about.html" data-nav>About</a>
+      <a href="features.html" data-nav>Features</a>
+      <a href="dashboard.html" data-nav>Dashboard</a>
+      <a href="quotes.html" data-nav>Quotes</a>
+    </div>
+    <div class="nav-time" id="clockBadge">--:-- --</div>
+  </nav>
+
+  <!-- ── ABOUT ── -->
+  <section class="about">
+    <div class="about-image-wrap" data-reveal data-reveal-dir="left">
+      <div class="about-blob-bg"></div>
+      <div class="about-image-card">
+        <div class="about-icon-grid">
+          <div class="about-icon-cell lv"><i class="ti ti-mood-smile"></i></div>
+          <div class="about-icon-cell green"><i class="ti ti-clock"></i></div>
+          <div class="about-icon-cell pink"><i class="ti ti-heart"></i></div>
+          <div class="about-icon-cell warm"><i class="ti ti-leaf"></i></div>
+        </div>
+        <div class="about-center-text">
+          <div class="about-big">✦</div>
+          <div class="about-tagline">Mind · Body · Balance</div>
+        </div>
+      </div>
+      <div class="sparkle s4">✶</div>
+      <div class="sparkle s5">✦</div>
+    </div>
+    <div class="about-text" data-reveal data-reveal-dir="right">
+      <div class="section-tag">About Serenity</div>
+      <h2 class="section-title">Welcome to <em>Your</em><br>Wellness Space</h2>
+      <p class="section-body">Serenity is a personal mental wellness dashboard built to help you stay in tune with yourself. No accounts, no subscriptions — just a calm, private space to check in daily.</p>
+      <div class="about-stats">
+        <div class="about-stat"><span class="about-stat-n">5</span><span class="about-stat-l">Mood levels</span></div>
+        <div class="about-stat"><span class="about-stat-n">3</span><span class="about-stat-l">Wellness metrics</span></div>
+        <div class="about-stat"><span class="about-stat-n">1</span><span class="about-stat-l">Calm space</span></div>
+      </div>
+      <div class="hero-btns" style="margin-top:32px;">
+        <a href="dashboard.html" class="btn-primary"><span>Go to Dashboard</span></a>
+        <a href="features.html" class="btn-ghost">See Features</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer-logo">✦ Serenity</div>
+    <div class="footer-sub">A personal mental wellness dashboard · Built with care</div>
+    <div class="footer-links">
+      <a href="https://github.com/SAMYUKTHASRR" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/samyuktha-sanil-b5b285291" target="_blank">LinkedIn</a>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
