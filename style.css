@@ -156,7 +156,7 @@ h2.section-title.center, .section-tag.center { display: flex; justify-content: c
   border-bottom: 1px solid var(--line-soft);
   transition: background .3s, border-color .3s;
 }
-.nav-logo { font-size: 19px; font-weight: 600; color: var(--cream); letter-spacing: -.2px; display: flex; align-items: center; gap: 6px; }
+.nav-logo { font-size: 19px; font-weight: 600; color: var(--cream); letter-spacing: -.2px; display: flex; align-items: center; gap: 6px; text-decoration: none; }
 .nav-mark { color: var(--rose); display: inline-block; animation: mark-spin 6s linear infinite; }
 @keyframes mark-spin { to { transform: rotate(360deg); } }
 .nav-links { display: flex; gap: 30px; }

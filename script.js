@@ -1,6 +1,6 @@
 /* ─────────────────────────────────────────
    SERENITY — Mental Wellness Dashboard
-   script.js · logic + motion layer
+   script.js · shared across all pages
 ───────────────────────────────────────── */
 
 /* ── Clock ── */
@@ -32,7 +32,7 @@ function showToast(msg) {
 }
 
 
-/* ── Mood Tracker ── */
+/* ── Mood Tracker (dashboard.html) ── */
 let moodLog = [];
 
 function logMood(emoji, label, btn) {
@@ -45,7 +45,8 @@ function logMood(emoji, label, btn) {
   moodLog.unshift({ emoji, label, time });
   if (moodLog.length > 5) moodLog.pop();
 
-  document.getElementById('stat-mood').textContent = emoji;
+  const statMood = document.getElementById('stat-mood');
+  if (statMood) statMood.textContent = emoji;
   bumpStat('stat-mood');
   renderMoodHistory();
   showToast(emoji + '  Mood logged — feeling ' + label.toLowerCase());
@@ -53,6 +54,7 @@ function logMood(emoji, label, btn) {
 
 function renderMoodHistory() {
   const el = document.getElementById('moodHistory');
+  if (!el) return;
   if (!moodLog.length) {
     el.innerHTML = '<span class="mood-empty">No entries yet — tap a mood above</span>';
     return;
@@ -70,7 +72,7 @@ function bumpStat(id) {
 }
 
 
-/* ── Focus Timer ── */
+/* ── Focus Timer (dashboard.html) ── */
 const FOCUS_CIRC     = 439.8; // 2 * PI * 70
 let focusInterval     = null;
 let focusSeconds      = 25 * 60;
@@ -86,15 +88,16 @@ function setMode(mode) {
   focusTotalSeconds = focusSeconds;
   updateFocusDisplay();
   updateFocusRing();
-  document.getElementById('focusLabel').textContent =
-    mode === 'short' ? 'Break · Ready' : 'Pomodoro · Ready';
+  const label = document.getElementById('focusLabel');
+  if (label) label.textContent = mode === 'short' ? 'Break · Ready' : 'Pomodoro · Ready';
 }
 
 function updateFocusDisplay() {
+  const el = document.getElementById('focusTime');
+  if (!el) return;
   const m = Math.floor(focusSeconds / 60);
   const s = focusSeconds % 60;
-  document.getElementById('focusTime').textContent =
-    (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
+  el.textContent = (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
 }
 
 function updateFocusRing() {
@@ -115,6 +118,7 @@ function updateRings() {
 function toggleFocus() {
   const btn   = document.getElementById('focusStartBtn');
   const label = document.getElementById('focusLabel');
+  if (!btn || !label) return;
 
   if (focusRunning) {
     clearInterval(focusInterval);
@@ -143,9 +147,11 @@ function toggleFocus() {
       btn.textContent   = 'Start';
       label.textContent = 'Session done! 🎉';
 
-      document.getElementById('stat-focus').textContent    = sessionsCompleted;
+      const statFocus = document.getElementById('stat-focus');
+      if (statFocus) statFocus.textContent = sessionsCompleted;
       bumpStat('stat-focus');
-      document.getElementById('sessionCount').textContent  = 'Sessions completed: ' + sessionsCompleted;
+      const sessionCount = document.getElementById('sessionCount');
+      if (sessionCount) sessionCount.textContent = 'Sessions completed: ' + sessionsCompleted;
       showToast('✦ Session complete — nice focus!');
 
       setMode(currentMode);
@@ -155,7 +161,7 @@ function toggleFocus() {
 }
 
 
-/* ── Calming Quotes ── */
+/* ── Calming Quotes (quotes.html) ── */
 const quotes = [
   { t: "You don't have to control your thoughts. You just have to stop letting them control you.",              a: "Dan Millman" },
   { t: "Almost everything will work again if you unplug it for a few minutes, including you.",                  a: "Anne Lamott" },
@@ -174,11 +180,12 @@ const quotes = [
 let lastQuoteIdx = 0;
 
 function newQuote() {
+  const box = document.querySelector('.big-quote-box');
+  if (!box) return;
   let idx;
   do { idx = Math.floor(Math.random() * quotes.length); } while (idx === lastQuoteIdx);
   lastQuoteIdx = idx;
 
-  const box = document.querySelector('.big-quote-box');
   box.classList.add('swapping');
   setTimeout(() => {
     document.getElementById('quoteText').textContent   = quotes[idx].t;
@@ -188,40 +195,44 @@ function newQuote() {
 }
 
 
-/* ── Wellness Insights ── */
+/* ── Wellness Insights (dashboard.html) ── */
 function updateWellness(type, val) {
   val = parseFloat(val) || 0;
 
   if (type === 'hydration') {
     const pct = Math.min(100, Math.round((val / 8) * 100));
-    document.getElementById('hydration-bar').style.width  = pct + '%';
-    document.getElementById('hydration-val').textContent  = pct + '%';
-    document.getElementById('hydration-sub').textContent  = val + ' of 8 glasses';
+    setText('hydration-val', pct + '%');
+    setWidth('hydration-bar', pct + '%');
+    setText('hydration-sub', val + ' of 8 glasses');
 
   } else if (type === 'sleep') {
     const pct = Math.min(100, Math.round((val / 8) * 100));
-    document.getElementById('sleep-bar').style.width = pct + '%';
-    document.getElementById('sleep-val').textContent = val + 'h';
-    document.getElementById('sleep-sub').textContent =
+    setWidth('sleep-bar', pct + '%');
+    setText('sleep-val', val + 'h');
+    setText('sleep-sub',
       val >= 7 ? 'Well rested!' :
       val >= 5 ? 'Could improve' :
-      val >  0 ? 'Try for 7–8h'  : 'Log hours below';
+      val >  0 ? 'Try for 7–8h'  : 'Log hours below');
 
   } else if (type === 'move') {
     const pct = Math.min(100, Math.round((val / 60) * 100));
-    document.getElementById('move-bar').style.width = pct + '%';
-    document.getElementById('move-val').textContent = pct + '%';
-    document.getElementById('move-sub').textContent = val + ' min today';
+    setWidth('move-bar', pct + '%');
+    setText('move-val', pct + '%');
+    setText('move-sub', val + ' min today');
   }
 }
+function setText(id, val)  { const el = document.getElementById(id); if (el) el.textContent = val; }
+function setWidth(id, val) { const el = document.getElementById(id); if (el) el.style.width = val; }
 
 
-/* ── Productivity Heatmap ── */
+/* ── Productivity Heatmap (dashboard.html) ── */
 const DAYS     = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
 let   prodData = [0, 1, 2, 3, 1, 2, 0];
 
 function renderProdGrid() {
-  document.getElementById('prodGrid').innerHTML = DAYS.map((d, i) => `
+  const grid = document.getElementById('prodGrid');
+  if (!grid) return;
+  grid.innerHTML = DAYS.map((d, i) => `
     <div>
       <div class="prod-day-label">${d}</div>
       <div class="prod-dot ${prodData[i] > 0 ? 'p' + Math.min(4, prodData[i]) : ''}"></div>
@@ -229,11 +240,12 @@ function renderProdGrid() {
 }
 
 
-/* ── Task List ── */
+/* ── Task List (dashboard.html) ── */
 let tasks = [];
 
 function addTask() {
   const inp  = document.getElementById('taskInput');
+  if (!inp) return;
   const text = inp.value.trim();
   if (!text) return;
   tasks.push({ text, done: false, id: Date.now() });
@@ -257,9 +269,10 @@ function deleteTask(id) {
 
 function renderTasks() {
   const list = document.getElementById('taskList');
+  if (!list) return;
   if (!tasks.length) {
     list.innerHTML = '<div class="task-empty">No tasks yet — add one above</div>';
-    document.getElementById('stat-tasks').textContent = '0/0';
+    setText('stat-tasks', '0/0');
     return;
   }
   list.innerHTML = tasks.map(t => `
@@ -270,7 +283,7 @@ function renderTasks() {
     </div>`).join('');
 
   const done = tasks.filter(t => t.done).length;
-  document.getElementById('stat-tasks').textContent = done + '/' + tasks.length;
+  setText('stat-tasks', done + '/' + tasks.length);
   bumpStat('stat-tasks');
 }
 
@@ -289,7 +302,7 @@ function updateProd() {
   renderProdGrid();
 
   const streak = prodData.filter(d => d > 0).length;
-  document.getElementById('stat-streak').textContent = streak + '🔥';
+  setText('stat-streak', streak + '🔥');
   bumpStat('stat-streak');
 }
 
@@ -297,6 +310,7 @@ function updateProd() {
 /* ── Scroll reveal ── */
 function initScrollReveal() {
   const targets = document.querySelectorAll('[data-reveal]');
+  if (!targets.length) return;
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -312,6 +326,7 @@ function initScrollReveal() {
 /* ── Animated stat counters ── */
 function initCounters() {
   const counters = document.querySelectorAll('[data-count]');
+  if (!counters.length) return;
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (!e.isIntersecting) return;
@@ -334,28 +349,28 @@ function initCounters() {
 }
 
 
-/* ── Nav: scroll spy, mobile toggle, glow ── */
+/* ── Nav: active page, mobile toggle, scroll effects ── */
 function initNav() {
   const nav      = document.getElementById('siteNav');
   const toggle   = document.getElementById('navToggle');
   const links    = document.getElementById('navLinks');
-  const navLinks = document.querySelectorAll('[data-nav]');
-  const sections = ['about', 'features', 'dashboard', 'quotes']
-    .map(id => document.getElementById(id)).filter(Boolean);
+  if (!nav) return;
 
-  toggle.addEventListener('click', () => links.classList.toggle('open'));
-  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+  const navLinks   = document.querySelectorAll('[data-nav]');
+  const currentPage = (location.pathname.split('/').pop() || 'index.html') || 'index.html';
+
+  navLinks.forEach(a => {
+    const href = a.getAttribute('href');
+    a.classList.toggle('active', href === currentPage || (currentPage === '' && href === 'index.html'));
+  });
+
+  if (toggle && links) {
+    toggle.addEventListener('click', () => links.classList.toggle('open'));
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+  }
 
   window.addEventListener('scroll', () => {
     nav.style.borderColor = window.scrollY > 20 ? 'var(--line)' : 'var(--line-soft)';
-
-    let current = null;
-    sections.forEach(sec => {
-      const rect = sec.getBoundingClientRect();
-      if (rect.top <= 140 && rect.bottom >= 140) current = sec.id;
-    });
-    navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
-
     const scrollTopBtn = document.getElementById('scrollTop');
     if (scrollTopBtn) scrollTopBtn.classList.toggle('show', window.scrollY > 600);
   }, { passive: true });
@@ -367,7 +382,7 @@ function initNav() {
 }
 
 
-/* ── Hero cursor glow + subtle blob parallax ── */
+/* ── Hero cursor glow + subtle blob parallax (index.html) ── */
 function initHeroGlow() {
   const hero = document.getElementById('home');
   const blob = document.getElementById('heroBlob');
@@ -385,7 +400,7 @@ function initHeroGlow() {
 }
 
 
-/* ── Ambient floating petals canvas ── */
+/* ── Ambient floating petals canvas (every page) ── */
 function initPetals() {
   const canvas = document.getElementById('petalCanvas');
   if (!canvas) return;
@@ -437,7 +452,7 @@ function initPetals() {
 }
 
 
-/* ── Init ── */
+/* ── Init (guarded — safe to run on every page) ── */
 renderProdGrid();
 renderTasks();
 updateFocusDisplay();
