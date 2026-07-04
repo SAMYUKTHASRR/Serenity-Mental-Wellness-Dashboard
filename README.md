@@ -123,11 +123,10 @@ npx serve .
 
 | Features | Dashboard |
 |:---:|:---:|
-| ![Features page](feature.png) | ![Dashboard page](dashboard.png) |
+| ![Features page](features.png) | ![Dashboard page](dashboard.png) |
 
 </div>
 
-> Drop `about.png`, `feature.png`, and `dashboard.png` into the repo root (or an `/assets` folder — just update the paths above to match, e.g. `assets/about.png`) alongside the existing `preview.png`.
 
 ### 🧪 Running Tests
 
