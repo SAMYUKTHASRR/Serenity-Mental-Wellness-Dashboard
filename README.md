@@ -97,33 +97,17 @@ npx serve .
 
 ## 📌 Section 3 — Reference
 
-### 📑 Table of Contents
-
-- [Overview](#-section-1--overview)
-  - [Description](#-description--why-this-exists)
-  - [Experience](#-experience--the-build-journey)
-  - [Requisites](#-requisites)
-- [Project Details](#️-section-2--project-details)
-  - [Project Context](#-project-context)
-  - [Installation](#️-installation)
-  - [Tech Stack](#️-tech-stack)
-  - [Credits](#-credits--acknowledgment)
-- [Reference](#-section-3--reference)
-  - [Visuals](#️-visuals)
-  - [Running Tests](#-running-tests)
-  - [Project Status](#-project-status)
-
 ### 🖼️ Visuals
 
 <div align="center">
 
 | Home | About |
 |:---:|:---:|
-| ![Home preview](preview.png) | ![About page](about.png) |
+| ![Home page](home.png) | ![About page](about.png) |
 
 | Features | Dashboard |
 |:---:|:---:|
-| ![Features page](features.png) | ![Dashboard page](dashboard.png) |
+| ![Focus Section](focus.png)] | 
 
 </div>
 
